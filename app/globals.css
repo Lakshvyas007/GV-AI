@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+}
+
+body {
+  font-size: 1.5rem;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-family: 'poppins', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sideBar {
+  flex: 2;
+  border-right: 3px solid rgb(10, 0, 0);
+}
+
+.main {
+  flex: 9;
+
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.upperSide {
+  padding: 2.5rem;
+  border-bottom: 3px solid rgb(0, 0, 0);
+  height: 70%;
+}
+
+.upperSideTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.addBtn {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.midBtn {
+  /* background: #5A4BFF; */
+  background: rgba(50, 51, 63, 0.881);
+  border: none;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+
+.query {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: rgb(16, 1, 1);
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(98, 98, 98, 1);
+}
+
+.query>img {
+  margin-right: 2rem;
+  object-fit: cover;
+  height: 1.75rem;
+}
+
+.lowerSide {
+  padding: 2rem;
+}
+
+.listItems {
+  margin: 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.listItemsImg {
+  margin: 1rem;
+  padding-right: 1rem;
+}
+
+.listItems:nth-child(1)>.listItemsImg {
+  margin-right: 0.5rem;
+}
+
+.listItems:nth-child(3)>.listItemsImg {
+  margin-right: 0.75rem;
+}
+
+
+.main {
+  background: white;
+  color: black;
+  /* min-height: calc(100vh - 14rem); */
+  height: 80vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem 10rem;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+
+.chats{
+  /* overflow-y: auto; */
+  overflow-y : scroll;
+  scroll-behavior:smooth;
+  width:100%;
+  max-width:70rem;
+  height:calc(100vh - 17rem);
+}
+
+.chat{
+  margin: 1rem;
+  padding: 1rem 2rem;
+  font-size:1.2rem;
+  display: flex;
+  align-items: flex-start;
+  text-align:justify;
+}
+
+.chatimg{
+  object-fit:cover;
+  width: 3.5rem;
+  margin-right:2rem;
+  border-radius:0.5rem;
+}
+
+.bot{
+  color:white;
+  background: rgba(50, 51, 63, 0.881);
+  width: fit-content;
+  border-radius: 0.5rem;
+
+}
+
+.chatFooter {
+  margin-top: auto;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inp {
+  padding: 0.5rem;
+  background: rgba(50, 51, 63, 0.881);
+  /* color: white; */
+  display: flex;
+  align-items: center;
+  border-radius:0.5rem;
+  width:68rem;
+  /* margin: 6rem 10rem; */
+}
+.inputPlaceholder{
+  color:white
+}
+
+.inp>input {
+  width: 90%;
+  outline: none;
+  padding: 1.25rem;
+  color: white;
+}
+
+.inp>input, .send{
+  background: transparent;
+  border:none;
+}
+
+
+
+/* Mobile-first responsive design */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .App {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .sideBar {
+    display: none;
+    flex: 1; /* Make the sidebar take up the full width */
+    border-right: none; /* Remove the right border */
+  }
+
+  .main {
+    flex: 1; /* Make the main content take up the full width */
+  
+    margin: 5rem; /* Adjust margin for better spacing */
+  }
+
+  .upperSide {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .upperSideTop {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center-align content */
+    margin-bottom: 0.5rem; /* Adjust margin */
+  }
+
+  .midBtn {
+    width: 100%; /* Make the button full width */
+    margin-bottom: 1rem; /* Adjust margin */
+  }
+
+  .query {
+    width: 100%; /* Make the query input full width */
+  }
+
+  .listItems {
+    flex-direction: column; /* Stack list items vertically */
+    text-align: center; /* Center-align content */
+  }
+
+  .listItemsImg {
+    margin: 0.5rem 0; /* Adjust margin */
+  }
+
+  .main {
+    margin: 2rem 1rem; /* Adjust margin */
+  }
+
+  .chats {
+    max-width: 100%; /* Make the chat container full width */
+    height: auto; /* Adjust height */
+  }
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 769px) {
+  .sideBar {
+    flex: 2; /* Restore sidebar width on larger screens */
+    border-right: 1px solid rgb(100, 100, 100); /* Add back the right border */
+  }
+
+  .main {
+    flex: 9; /* Restore main content width on larger screens */
+  }
+
+  /* Additional responsive styling for tablet and larger screens if needed */
+}
+
+/* Larger screens, e.g., desktop */
+@media screen and (min-width: 1024px) {
+  /* Add responsive styling for larger screens if needed */
+}
